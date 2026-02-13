@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Midnight Valentine</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+html,body{
+  background:#07000f;
+  color:#e8e1ff;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  scroll-behavior:smooth;
+}
+
+/* ---- NAVBAR ---- */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(7,0,15,.95);
+  backdrop-filter:blur(10px);
+  padding:14px 6%;
+  display:flex;
+  justify-content:space-between;
+  z-index:1000;
+}
+nav h2{
+  color:#ffd166;
+}
+nav a{
+  color:#e8e1ff;
+  text-decoration:none;
+  margin-left:18px;
+}
+
+/* ---- VIGNETTE FILM EFFECT ---- */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(circle at center, transparent 40%, rgba(0,0,0,.7));
+  z-index:999;
+}
+
+/* ---- HERO SECTION ---- */
+.hero{
+  height:100vh;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:
+  linear-gradient(180deg, rgba(7,0,15,.9), rgba(20,5,30,.95)),
+  url('richa1.jpg');   /* <-- ADD YOUR FIRST PHOTO HERE */
+  background-size:cover;
+  background-position:center;
+}
+
+.moon{
+  position:absolute;
+  top:18%;
+  right:12%;
+  width:120px;
+  height:120px;
+  background:radial-gradient(circle,#fff6d6,#ffd166 60%, transparent 70%);
+  filter:blur(8px);
+  animation:pulseMoon 6s infinite ease-in-out;
+}
+
+@keyframes pulseMoon{
+  0%,100%{opacity:.6; transform:scale(1);}
+  50%{opacity:1; transform:scale(1.08);}
+}
+
+.hero h1{
+  font-size:clamp(2.2rem,5vw,3.8rem);
+  background:linear-gradient(90deg,#ffd166,#ffb703);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.rose-line{
+  height:2px;
+  background:linear-gradient(90deg, transparent,#8b0000,#ffd166,transparent);
+  margin:20px auto;
+  width:60%;
+}
+
+/* ---- SECTIONS ---- */
+section{
+  padding:90px 6%;
+}
+
+/* ---- LOVE CARDS ---- */
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;
+}
+.card{
+  background:#120019;
+  padding:22px;
+  border-radius:16px;
+  border-left:3px solid #ffd166;
+}
+
+/* ---- TIMELINE ---- */
+.timeline{
+  max-width:900px;
+  margin:auto;
+}
+.event{
+  background:#120019;
+  padding:18px;
+  margin:12px 0;
+  border-left:4px solid #ffd166;
+}
+
+/* ---- PHOTO GALLERY ---- */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:14px;
+}
+.gallery img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:14px;
+  border:1px solid rgba(255,215,102,.2);
+}
+
+/* ---- BUTTONS ---- */
+button{
+  margin:10px;
+  padding:12px 22px;
+  background:#ffd166;
+  color:#07000f;
+  border:none;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* ---- WHISPER TEXT ---- */
+.whisper{
+  position:fixed;
+  bottom:8%;
+  width:100%;
+  text-align:center;
+  font-size:14px;
+  color:rgba(255,214,102,.6);
+  letter-spacing:1px;
+  pointer-events:none;
+  z-index:998;
+  animation:fadeWhisper 8s infinite;
+}
+
+@keyframes fadeWhisper{
+  0%,100%{opacity:0;}
+  50%{opacity:.9;}
+}
+
+/* ---- FALLING HEARTS ---- */
+.heart-rain{
+  position:fixed;
+  top:-40px;
+  font-size:24px;
+  animation:fall 6s linear infinite;
+}
+@keyframes fall{
+  to{transform:translateY(110vh);}
+}
+
+@media(max-width:700px){
+  nav a{display:none;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="whisper">
+  “In darkness, I found you… and chose you.”
+</div>
+
+<nav>
+  <h2>Midnight Love 🌙</h2>
+  <div>
+    <a href="#story">Story</a>
+    <a href="#memories">Memories</a>
+    <a href="#question">Question</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="moon"></div>
+
+  <h1>Richa — My Midnight Love ❤️</h1>
+
+  <div class="rose-line"></div>
+
+  <p style="max-width:700px;">
+  You are the calm in my chaos,  
+  the light in my night,  
+  and the reason I keep believing in magic.
+  </p>
+</header>
+
+<section id="story">
+  <h2 style="color:#ffd166;text-align:center;margin-bottom:25px;">
+    Why You Matter
+  </h2>
+
+  <div class="card-grid">
+    <div class="card">
+      <h3>Your Silence</h3>
+      <p>It speaks louder than any storm.</p>
+    </div>
+    <div class="card">
+      <h3>Your Presence</h3>
+      <p>The world softens when you arrive.</p>
+    </div>
+    <div class="card">
+      <h3>Your Light</h3>
+      <p>Even darkness bows to you.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 style="color:#ffd166;text-align:center;margin-bottom:25px;">
+    Our Midnight Timeline
+  </h2>
+
+  <div class="timeline">
+    <div class="event">✨ First glance — the world stopped.</div>
+    <div class="event">🌙 First talk — the night remembered.</div>
+    <div class="event">💫 Every moment since — sacred.</div>
+  </div>
+</section>
+
+<section id="memories">
+  <h2 style="color:#ffd166;text-align:center;margin-bottom:25px;">
+    Our Memories
+  </h2>
+
+  <div class="gallery">
+    <img src="RIcha 1.jpeg" alt="Memory 1">
+    <img src="Richa 2.jpeg" alt="Memory 2">
+    <img src="Richa 3.jpeg" alt="Memory 3">
+    <img src="Richa 4.jpeg" alt="Memory 4">
+  </div>
+</section>
+
+<section id="question" style="text-align:center;">
+  <h2 style="color:#ffd166;margin-bottom:15px;">
+    One Question
+  </h2>
+  <p>Will you walk with me under the same moon?</p>
+  <button onclick="yes()">Yes 🌙</button>
+  <button onclick="no()">Maybe ✨</button>
+</section>
+
+<footer style="text-align:center;padding:25px;background:#05000b;color:#ffd166;">
+  Crafted in darkness, sealed with love 🌙
+</footer>
+
+<script>
+function makeHearts(){
+  const h=document.createElement("div");
+  h.innerHTML="❤️";
+  h.className="heart-rain";
+  h.style.left=Math.random()*100+"vw";
+  h.style.animationDuration=(Math.random()*3+3)+"s";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+}
+setInterval(makeHearts,350);
+
+function yes(){
+  alert("You are my universe, Richa 🌙❤️");
+}
+function no(){
+  alert("Even your maybe feels like forever ✨");
+}
+</script>
+
+</body>
+</html>
